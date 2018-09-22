@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface Filter
 {
-    public List<Grade> apply(List<Grade> list);
+    public List<Grade> apply(List<Grade> list) throws SizeException;
 }
