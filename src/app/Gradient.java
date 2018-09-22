@@ -30,7 +30,7 @@ public class Gradient
 	 */
 	public static void main(String[] args)
 	{
-		Filter                   paFilter;        
+		Filter                   paFilter;
 		Grade                    courseGrade, hwGrade, paGrade;
 		GradingStrategy          courseStrategy, hwStrategy, paStrategy;
 		List<Grade>              grades, hws, pas;
@@ -121,7 +121,7 @@ public class Gradient
 		{
 			Double v;
 			if (value == null) v = null;
-			else v = new Double(Double.parseDouble(value));
+			else v = Double.parseDouble(value);
 			
 			result = new Grade(key, v);
 		}
