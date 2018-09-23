@@ -12,10 +12,10 @@ package grading;
  * [ ] 4. The `compareTo(Grade other)` method must return the result of comparing `this.value`
  * and `other.value` accounting for missing (i.e., `null`) values appropriately.
  *
- *      [ ] 4.1 If `this.value` is `null` and `other.value` is non-`null` then it must return `-1`.
- *      [ ] 4.2 If `this.value` is `null` and `other.value` is `null` then it must return `0`.
- *      [ ]4.3 If `this.value` is non-`null` and `other.value` is `null` then it must return `1`.
- *      [ ] 4.4 If both `this.value` and `other.value` are non-`null` then it must return the result
+ *      [X] 4.1 If `this.value` is `null` and `other.value` is non-`null` then it must return `-1`.
+ *      [X] 4.2 If `this.value` is `null` and `other.value` is `null` then it must return `0`.
+ *      [X] 4.3 If `this.value` is non-`null` and `other.value` is `null` then it must return `1`.
+ *      [X] 4.4 If both `this.value` and `other.value` are non-`null` then it must return the result
  *      of calling `compareTo()` on `this.value` and passing it `other.value` (though it need not
  *      be implemented this way).
  *
@@ -78,6 +78,15 @@ public class Grade implements Comparable<Grade>
     @Override
     public int compareTo(Grade g)
     {
-        return value.compareTo(g.value);
+        if (value == null)
+        {
+            if (g.value == null) return 0;
+            else return -1;
+        }
+        else
+        {
+            if (g.value == null) return 1;
+            else return value.compareTo(g.value);
+        }
     }
 }
