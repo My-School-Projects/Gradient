@@ -21,13 +21,13 @@ package grading;
  *
  * [ ] 5. To `toString()` method must return a `String` representation of the `Grade` object.
  *
- *      5.1 If the `value` attribute is not `null` then the `String` must contain the `key`
+ *      [X] 5.1 If the `value` attribute is not `null` then the `String` must contain the `key`
  *      attribute, followed by the `String` literal `":"`, followed by a single space,
  *      followed by the `value` attribute (in a field of width 5 with 1 digit to the right
  *      of the decimal point).
- *      5.2 If the `value` attribute is `null` then the `String` must contain the `key`
+ *      [X] 5.2 If the `value` attribute is `null` then the `String` must contain the `key`
  *      attribute, followed by the `String` literal `":"`, followed by a single space,
- *      followed by the `String` literal `"NA"` (which is also a field of width 5).
+ *      followed by the `String` literal `"   NA"` (which is also a field of width 5).
  *
  * Note that, while `null` `key` attributes are invalid (i.e., every `Grade` object must
  * have a non-`null`, non-empty `key` attribute), `null` `value` attributes are valid
@@ -72,7 +72,10 @@ public class Grade implements Comparable<Grade>
     @Override
     public String toString()
     {
-        return key + ": " + value.toString();
+        return (value != null) ?
+                String.format("%s: %5.1f", key, value)
+                :
+                String.format("%s:    NA", key);
     }
 
     @Override

@@ -9,7 +9,7 @@ class GradeTest
     private Grade g1, g2;
 
     @Test
-    void specR2stringConstructorThrowsOnNullKey()
+    void specR2_StringConstructorThrowsOnNullKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -18,7 +18,7 @@ class GradeTest
     }
 
     @Test
-    void specR2stringDoublePrimitiveConstructorThrowsOnNullKey()
+    void specR2_StringDoublePrimitiveConstructorThrowsOnNullKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -27,7 +27,7 @@ class GradeTest
     }
 
     @Test
-    void specR2stringDoubleConstructorThrowsOnNullKey()
+    void specR2_StringDoubleConstructorThrowsOnNullKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -36,7 +36,7 @@ class GradeTest
     }
 
     @Test
-    void specR2stringConstructorThrowsOnEmptyKey()
+    void specR2_StringConstructorThrowsOnEmptyKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -45,7 +45,7 @@ class GradeTest
     }
 
     @Test
-    void specR2stringDoublePrimativeConstructorThrowsOnEmptyKey()
+    void specR2_StringDoublePrimativeConstructorThrowsOnEmptyKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -54,7 +54,7 @@ class GradeTest
     }
 
     @Test
-    void specR2stringDoubleConstructorThrowsOnEmptyKey()
+    void specR2_StringDoubleConstructorThrowsOnEmptyKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -63,14 +63,14 @@ class GradeTest
     }
 
     @Test
-    void specR3stringConstructorHasCorrectValue()
+    void specR3_StringConstructorHasCorrectValue()
     {
         g1 = new Grade("Grade");
         assertEquals(Double.valueOf(0d), g1.getValue());
     }
 
     @Test
-    void specR4_1CompareTo_ThisValueNull()
+    void specR4_1_CompareTo_ThisValueNull()
     {
         g1 = new Grade("G1", null);
         g2 = new Grade("G2"); // g2.value != null, as per R3
@@ -78,7 +78,7 @@ class GradeTest
     }
 
     @Test
-    void specR4_2CompareTo_BothNull()
+    void specR4_2_CompareTo_BothNull()
     {
         g1 = new Grade("G1", null);
         g2 = new Grade("G2", null);
@@ -86,7 +86,7 @@ class GradeTest
     }
 
     @Test
-    void specR4_3CompareTo_OtherValueNull()
+    void specR4_3_CompareTo_OtherValueNull()
     {
         g1 = new Grade("G1"); // g1.value != null, as per R3
         g2 = new Grade("G2", null);
@@ -94,7 +94,7 @@ class GradeTest
     }
 
     @Test
-    void specR4_4CompareTo_NeitherNull()
+    void specR4_4_CompareTo_NeitherNull()
     {
         g1 = new Grade("G1", 5);
         g2 = new Grade("G2", 4);
@@ -106,5 +106,29 @@ class GradeTest
         g2 = new Grade("G2", 2);
         comparison = g1.getValue().compareTo(g2.getValue());
         assertEquals(comparison, g1.compareTo(g2));
+    }
+
+    @Test
+    void specR5_1_ToString_ValueNotNull_SingleDecimal()
+    {
+        assertEquals("G1:  23.5", new Grade("G1", 23.5).toString());
+    }
+
+    @Test
+    void specR5_1_ToString_ValueNotNull_DoubleDecimal()
+    {
+        assertEquals("G2:  84.3", new Grade("G2", 84.25).toString());
+    }
+
+    @Test
+    void specR5_1_ToString_ValueNotNull_NoDecimal()
+    {
+        assertEquals("G3: 100.0", new Grade("G3", 100).toString());
+    }
+
+    @Test
+    void specR5_2_ToString_ValueNull()
+    {
+        assertEquals("G4:    NA", new Grade("G4", null).toString());
     }
 }
