@@ -67,4 +67,12 @@ class GradeTest
             new Grade("", Double.valueOf(100d));
         });
     }
+
+    // R3
+    @Test
+    void stringConstructorHasCorrectValue()
+    {
+        grade = new Grade("Grade");
+        assertEquals(Double.valueOf(0d), grade.getValue());
+    }
 }

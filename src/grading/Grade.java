@@ -6,7 +6,7 @@ package grading;
  * [X] 2. If a constructor is passed a `key` that is `null` or empty (i.e., `""`) then the
  * constructor must throw an `IllegalArgumentException`
  *
- * [ ] 3. The `Grade(String key)` constructor must construct a `Grade` object with a `value`
+ * [X] 3. The `Grade(String key)` constructor must construct a `Grade` object with a `value`
  * attribute of `0.0`.
  *
  * [ ] 4. The `compareTo(Grade other)` method must return the result of comparing `this.value`
@@ -42,6 +42,7 @@ public class Grade implements Comparable<Grade>
     {
         if (key == null || key.equals("")) throw new IllegalArgumentException();
         this.key = key;
+        value = 0d;
     }
 
     public Grade(String key, double value) throws IllegalArgumentException
