@@ -8,9 +8,8 @@ class GradeTest
 {
     private Grade grade;
 
-    // R2
     @Test
-    void stringConstructorThrowsOnNullKey()
+    void specR2stringConstructorThrowsOnNullKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -18,9 +17,8 @@ class GradeTest
         });
     }
 
-    // R2
     @Test
-    void stringDoublePrimitiveConstructorThrowsOnNullKey()
+    void specR2stringDoublePrimitiveConstructorThrowsOnNullKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -28,9 +26,8 @@ class GradeTest
         });
     }
 
-    // R2
     @Test
-    void stringDoubleConstructorThrowsOnNullKey()
+    void specR2stringDoubleConstructorThrowsOnNullKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -38,9 +35,8 @@ class GradeTest
         });
     }
 
-    // R2
     @Test
-    void stringConstructorThrowsOnEmptyKey()
+    void specR2stringConstructorThrowsOnEmptyKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -48,9 +44,8 @@ class GradeTest
         });
     }
 
-    // R2
     @Test
-    void stringDoublePrimativeConstructorThrowsOnEmptyKey()
+    void specR2stringDoublePrimativeConstructorThrowsOnEmptyKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -58,9 +53,8 @@ class GradeTest
         });
     }
 
-    // R2
     @Test
-    void stringDoubleConstructorThrowsOnEmptyKey()
+    void specR2stringDoubleConstructorThrowsOnEmptyKey()
     {
         assertThrows(IllegalArgumentException.class, () ->
         {
@@ -68,9 +62,8 @@ class GradeTest
         });
     }
 
-    // R3
     @Test
-    void stringConstructorHasCorrectValue()
+    void specR3stringConstructorHasCorrectValue()
     {
         grade = new Grade("Grade");
         assertEquals(Double.valueOf(0d), grade.getValue());
