@@ -40,17 +40,20 @@ public class Grade implements Comparable<Grade>
 
     public Grade (String key) throws IllegalArgumentException
     {
+        if (key == null || key.equals("")) throw new IllegalArgumentException();
         this.key = key;
     }
 
     public Grade(String key, double value) throws IllegalArgumentException
     {
+        if (key == null || key.equals("")) throw new IllegalArgumentException();
         this.key = key;
         this.value = value;
     }
 
     public Grade(String key, Double value) throws IllegalArgumentException
     {
+        if (key == null || key.equals("")) throw new IllegalArgumentException();
         this.key = key;
         this.value = value;
     }
