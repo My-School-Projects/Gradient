@@ -9,7 +9,7 @@ package grading;
  * [X] 3. The `Grade(String key)` constructor must construct a `Grade` object with a `value`
  * attribute of `0.0`.
  *
- * [ ] 4. The `compareTo(Grade other)` method must return the result of comparing `this.value`
+ * [X] 4. The `compareTo(Grade other)` method must return the result of comparing `this.value`
  * and `other.value` accounting for missing (i.e., `null`) values appropriately.
  *
  *      [X] 4.1 If `this.value` is `null` and `other.value` is non-`null` then it must return `-1`.
